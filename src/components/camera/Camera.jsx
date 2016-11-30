@@ -5,6 +5,8 @@ import style from './Camera.scss';
 const view_width = window.innerWidth;
 const view_height = window.innerHeight;
 
+var canvas;
+
 class Camera extends Component {
 
     constructor(props) {
@@ -58,7 +60,6 @@ class Camera extends Component {
             // do something
         }
         var v,
-            canvas,
             context,
             w,
             h;
@@ -74,6 +75,7 @@ class Camera extends Component {
         const draw = (v, c, w, h) => {
             if (v.paused || v.ended) 
                 return false; // if no video, exit here
+            // context.filter = "contrast(200%)";
             context.drawImage(v, 0, 0, w, h); // draw video feed to canvas
 
             const {canvas_height} = this.state;
@@ -96,30 +98,19 @@ class Camera extends Component {
                 this.setState({now_step: 'confirm'});
             });
 
-        // for iOS create file reader
-        var fr;
+    }
 
-        sel.addEventListener('change', function (e) {
-            var f = sel.files[0]; // get selected file (camera capture)
-
-            fr = new FileReader();
-            fr.onload = receivedData; // add onload event
-
-            fr.readAsDataURL(f); // get captured image as data URI
-        })
-
-        function receivedData() {
-            // readAsDataURL is finished - add URI to IMG tag src
-            photo_confirm.src = fr.result;
-        }
-
+    cancelClick = () => {
+        console.log('cancel');
+        this.setState({now_step: 'take_photo'});
     }
 
     confirmClick = () => {
         console.log('confirm');
+        const dataUrl = canvas.toDataURL("image/png");
         this
             .props
-            .getImgCallBack();
+            .getImgCallBack(dataUrl);
     }
 
     render() {
@@ -146,12 +137,18 @@ class Camera extends Component {
                     <input type="button" value="Save" id="cover_save"/>
                 </div>
 
-                <div className="box__confirm">
+                <div
+                    className="box__confirm"
+                    style={now_step == "confirm"
+                    ? {}
+                    : {
+                        display: 'none'
+                    }}>
                     <img id="photo_confirm" src="" alt="capture"/>
+                    <button className="btn__cancel" onClick={this.cancelClick}>取消</button>
                     <button className="btn__confirm" onClick={this.confirmClick}>確定</button>
                 </div>
 
-                <input id="fileselect" type="file" accept="image/*" capture="camera"></input>
                 <canvas id="canvas" width={view_width} height={canvas_height}></canvas>
             </div>
         );

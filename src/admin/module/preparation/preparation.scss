@@ -1,0 +1,21 @@
+.Preparation {
+    .img_mugshot {
+        object-fit: cover;
+        object-position: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid gray;
+    }
+    .box__player {
+        color: #b7b7b7;
+        cursor: pointer;
+    }
+    .online {
+        color: #72c372;
+    }
+    .onMaster {
+        color: red;
+        font-weight: bold;
+    }
+}

@@ -1,61 +1,66 @@
 * {
-  overflow: auto;
+    overflow: auto;
 }
 
 .Camera {
-  box-sizing: border-box;
-  background-color: black;
-  min-height: 100vh;
-  h1 {
-    color: gray;
-    font-size: 5vw;
-    text-align: center;
-  }
-  canvas {
-    display: none;
-  }
+    box-sizing: border-box;
+    background-color: black;
+    min-height: 100vh;
+    h1 {
+        color: gray;
+        font-size: 5vw;
+        text-align: center;
+    }
+    canvas {
+        display: none;
+    }
+    button {
+        position: relative;
+        z-index: 100;
+    }
 }
 
 .box__video {
-  position: relative;
-  @at-root #videoElement {
-    width: 100vw;
-    /*border-radius: 50%;*/
-    background-color: black;
-  }
-  .box__cover {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .img__cover {
-    display: none;
-  }
-  #cover_save {
-    position: fixed;
-    bottom: 10vw;
-    width: 30vw;
-    font-size: 10vw;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: white;
-  }
+    position: relative;
+    @at-root #videoElement {
+        width: 100vw;
+        /*border-radius: 50%;*/
+        background-color: black;
+    }
+    .box__cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .img__cover {
+        display: none;
+    }
+    #cover_save {
+        position: fixed;
+        bottom: 10vw;
+        width: 30vw;
+        font-size: 10vw;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: white;
+    }
 }
 
 .box__confirm {
-  @at-root #photo_confirm {
-    border-radius: 50%;
-  }
-  .btn__confirm {
-    background-color: white;
-    color: black;
-    font-size: 10vw;
-    width: 30vw;
-  }
+    text-align: center;
+    @at-root #photo_confirm {
+        border-radius: 50%;
+    }
+    button {
+        background-color: white;
+        color: black;
+        font-size: 10vw;
+        width: 30vw;
+    }
 }
