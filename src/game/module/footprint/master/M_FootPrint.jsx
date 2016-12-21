@@ -139,7 +139,7 @@ class M_FootPrint extends Component {
         const {footprints, round, submit_active} = this.state;
 
         return (
-            <div>
+            <div className="M_FootPrint">
                 <Container>
                     <Row>
                         <h1>M_FootPrint</h1>

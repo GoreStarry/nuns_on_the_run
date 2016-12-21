@@ -5,6 +5,8 @@ import 'normalize.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ioClient from 'socket.io-client';
 
+import style from './game.scss';
+
 import Login from './game/module/login/Login.jsx';
 import Prepare from './game/module/prepare/Prepare.jsx';
 import M_FootPrint from './game/module/footprint/master/M_FootPrint.jsx';

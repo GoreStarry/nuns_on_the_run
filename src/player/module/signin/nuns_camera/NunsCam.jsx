@@ -18,6 +18,8 @@ class NunsCam extends Component {
         })
             .then((res) => {
                 console.log(res.data);
+                alert('上傳成功');
+                window.location = "/player/login/";
             })
             .catch((err) => {
                 console.log(err);

@@ -62,7 +62,7 @@ class Replay extends Component {
     render() {
         const {round_master, round_junior, juniro_footprints, master_footprints} = this.state;
         return (
-            <div>
+            <div className="Replay">
                 <h1>Round: {round_junior}</h1>
                 <KeyHandler keyEventName={KEYPRESS} keyValue="w" onKeyHandle={this.prevMove}/>
                 <KeyHandler keyEventName={KEYPRESS} keyValue="s" onKeyHandle={this.nextMove}/>

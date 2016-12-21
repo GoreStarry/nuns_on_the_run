@@ -69,7 +69,7 @@ class Preparation extends Component {
             .post('/api/admin/room_data/', {room_id: this.props.params.room_id})
             .then((res) => {
                 console.log(res.data);
-                this.setState({room_state: res.data});
+                this.setState({room_state: res.data.room_data});
             })
             .catch((err) => {
                 console.log(err);
@@ -87,7 +87,7 @@ class Preparation extends Component {
                 this
                     .socket
                     .emit('invite_player', masters);
-                window.location = `/admin/charch/${room_id}`
+                window.location = `/admin/church/${room_id}`
             })
             .catch((err) => {
                 console.log(err);
