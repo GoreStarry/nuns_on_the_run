@@ -1,6 +1,8 @@
-# nuns_on_the_run_app
+# Nuns on the Run (board game)
 
->  Play the board game 'nuns on the run' by mobile phone and
+>  Play the board game 'Nuns on the Run' by mobile phone and projector
+
+
 
 ## Build Setup
 
@@ -8,20 +10,19 @@
 # install dependencies
 npm install
 
+# mongodb
+mongod
+
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Main Router
+
+### room create
+* /amdin/
+### sign up player and take the nus photo
+* /player/login/
+### player enter the game in last game room
+* /game/login/
